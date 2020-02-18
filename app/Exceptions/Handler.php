@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -24,6 +25,7 @@ class Handler extends ExceptionHandler
         ModelNotFoundException::class,
         TokenMismatchException::class,
         ValidationException::class,
+        UnauthorizedHttpException::class,
     ];
 
     /**
@@ -58,8 +60,16 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+//        dd($e instanceof ValidationException);
         if ($e instanceof ValidationException) {
             return parent::render($request, $e);
+        }
+
+        if ($e instanceof UnauthorizedHttpException) {
+            return response()->json([
+                'errors' => "true",
+                'message' => $e->getMessage()
+            ], $e->getStatusCode());
         }
 
         if ($e instanceof TokenMismatchException) {
@@ -84,6 +94,7 @@ class Handler extends ExceptionHandler
         if ($e instanceof NotFoundHttpException) {
             return response()->view('errors.404', [], 404);
         }
+
 
         return response()->view('errors.500', [], 500);
     }

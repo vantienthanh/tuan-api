@@ -7,9 +7,8 @@ namespace Modules\User\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Modules\User\Entities\Sentinel\User;
-use Modules\User\Http\Requests\RegisterRequest;
 use Tymon\JWTAuth\Exceptions\JWTException;
-use Tymon\JWTAuth\JWTAuth;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class MobileController extends Controller
 {
@@ -18,12 +17,13 @@ class MobileController extends Controller
     {
     }
 
-    public function register(RegisterRequest $request)
+    public function register(Request $request)
     {
         try {
             $user = new User();
             $user->email = $request['email'];
-            $user->name = $request['name'];
+            $user->first_name = $request['first_name'];
+            $user->last_name = $request['last_name'];
             $user->password = bcrypt($request['password']);
             $user->is_mobile = true;
             $user->save();
@@ -79,4 +79,8 @@ class MobileController extends Controller
         }
     }
 
+    public function user(Request $request)
+    {
+        dd($request->header('Authorization'));
+    }
 }
