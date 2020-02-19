@@ -27,8 +27,18 @@ class NewsController extends Controller
 
     public function newsDetail(Request $request)
     {
-        $detail = $this->news->find($request->id);
+        try {
+            $detail = $this->news->find($request->id);
 
-        return new NewsDetailTransformers($detail);
+            return new NewsDetailTransformers($detail);
+        } catch (\Exception $e) {
+            return response()->json([
+                'errors' => 'true',
+                'data' => $e,
+            ],
+                500
+            );
+        }
+
     }
 }

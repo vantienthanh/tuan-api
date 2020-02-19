@@ -3,11 +3,39 @@
 namespace Modules\News\Repositories\Eloquent;
 
 use Illuminate\Http\Request;
+use Modules\News\Events\NewsWasCreated;
+use Modules\News\Events\NewsWasDeleted;
+use Modules\News\Events\NewsWasUpdated;
 use Modules\News\Repositories\NewsRepository;
 use Modules\Core\Repositories\Eloquent\EloquentBaseRepository;
 
 class EloquentNewsRepository extends EloquentBaseRepository implements NewsRepository
 {
+    public function create($data)
+    {
+        $news = $this->model->create($data);
+
+        event(new NewsWasCreated($news, $data));
+
+        return $news;
+    }
+
+    public function update($news, $data)
+    {
+        $news->update($data);
+
+        event(new NewsWasUpdated($news, $data));
+
+        return $news;
+    }
+
+    public function destroy($news)
+    {
+        event(new NewsWasDeleted($news));
+
+        return $news->delete();
+    }
+
     public function getListNews(Request $request)
     {
         $query = $this->allWithBuilder();

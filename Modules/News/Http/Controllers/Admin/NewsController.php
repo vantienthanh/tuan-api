@@ -31,9 +31,9 @@ class NewsController extends AdminBaseController
      */
     public function index()
     {
-        //$news = $this->news->all();
+        $news = $this->news->all();
 
-        return view('news::admin.news.index', compact(''));
+        return view('news::admin.news.index', compact('news'));
     }
 
     /**

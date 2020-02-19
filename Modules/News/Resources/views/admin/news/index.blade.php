@@ -29,23 +29,31 @@
                         <table class="data-table table table-bordered table-hover">
                             <thead>
                             <tr>
-                                <th>{{ trans('core::core.table.created at') }}</th>
-                                <th data-sortable="false">{{ trans('core::core.table.actions') }}</th>
+                                <th width="50px">ID</th>
+                                <th>Tiêu đề</th>
+                                <th>URL</th>
+                                <th width="200px">Hình ảnh</th>
+                                <th width="200px">{{ trans('core::core.table.created at') }}</th>
+                                <th width="90px" data-sortable="false">{{ trans('core::core.table.actions') }}</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php if (isset($news)): ?>
-                            <?php foreach ($news as $news): ?>
+                            <?php foreach ($news as $item): ?>
                             <tr>
+                                <td>{{$item->id}}</td>
+                                <td>{{$item->title}}</td>
+                                <td><a href="{{$item->url}}"></a></td>
+                                <td><img src="{{$item->getImages()}}" alt="" width="100px"></td>
                                 <td>
-                                    <a href="{{ route('admin.news.news.edit', [$news->id]) }}">
-                                        {{ $news->created_at }}
+                                    <a href="{{ route('admin.news.news.edit', [$item->id]) }}">
+                                        {{ $item->created_at }}
                                     </a>
                                 </td>
                                 <td>
                                     <div class="btn-group">
-                                        <a href="{{ route('admin.news.news.edit', [$news->id]) }}" class="btn btn-default btn-flat"><i class="fa fa-pencil"></i></a>
-                                        <button class="btn btn-danger btn-flat" data-toggle="modal" data-target="#modal-delete-confirmation" data-action-target="{{ route('admin.news.news.destroy', [$news->id]) }}"><i class="fa fa-trash"></i></button>
+                                        <a href="{{ route('admin.news.news.edit', [$item->id]) }}" class="btn btn-default btn-flat"><i class="fa fa-pencil"></i></a>
+                                        <button class="btn btn-danger btn-flat" data-toggle="modal" data-target="#modal-delete-confirmation" data-action-target="{{ route('admin.news.news.destroy', [$item->id]) }}"><i class="fa fa-trash"></i></button>
                                     </div>
                                 </td>
                             </tr>
