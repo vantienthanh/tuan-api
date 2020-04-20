@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddIsMobileAccountToUserTable extends Migration
+class Like extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddIsMobileAccountToUserTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->boolean('is_mobile')->default(false);
+        Schema::create('like', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->increments('id');
+            // Your fields
+            $table->tinyInteger('user_id');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class AddIsMobileAccountToUserTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('is_mobile');
-        });
+        Schema::dropIfExists('like');
     }
 }

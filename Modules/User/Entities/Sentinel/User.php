@@ -10,9 +10,8 @@ use Laracasts\Presenter\PresentableTrait;
 use Modules\User\Entities\UserInterface;
 use Modules\User\Entities\UserToken;
 use Modules\User\Presenters\UserPresenter;
-use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends EloquentUser implements UserInterface, AuthenticatableContract, JWTSubject
+class User extends EloquentUser implements UserInterface, AuthenticatableContract
 {
     use PresentableTrait, Authenticatable;
 
@@ -22,7 +21,6 @@ class User extends EloquentUser implements UserInterface, AuthenticatableContrac
         'permissions',
         'first_name',
         'last_name',
-        'is_mobile'
     ];
 
     /**
@@ -132,15 +130,5 @@ class User extends EloquentUser implements UserInterface, AuthenticatableContrac
         $permissions = $this->getPermissionsInstance();
 
         return $permissions->hasAccess($permission);
-    }
-
-    public function getJWTIdentifier()
-    {
-        return $this->getKey();
-    }
-
-    public function getJWTCustomClaims()
-    {
-        return [];
     }
 }
