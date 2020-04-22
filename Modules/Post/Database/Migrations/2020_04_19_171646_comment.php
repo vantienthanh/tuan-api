@@ -19,6 +19,7 @@ class Comment extends Migration
             // Your fields
             $table->string('content');
             $table->tinyInteger('user_id');
+            $table->tinyInteger('post_id');
             $table->string('type');
             $table->timestamps();
         });

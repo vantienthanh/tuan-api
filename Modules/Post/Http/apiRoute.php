@@ -9,13 +9,38 @@ $router->group(['prefix' => '/post', 'middleware' => ['jwt.auth']], function (Ro
         'uses' => 'PostController@listEmployer',
     ]);
 
+    $router->get('employer/{id}', [
+        'as' => 'api.post.employer.detail',
+        'uses' => 'PostController@employerDetail',
+    ]);
+
     $router->post('employer', [
         'as' => 'api.post.employer.create',
         'uses' => 'PostController@createEmployer',
     ]);
 
-    $router->get('news-detail/{id}', [
-        'as' => 'api.news.mobile.detail',
-        'uses' => 'NewsController@newsDetail',
+    $router->get('member', [
+        'as' => 'api.post.member.list',
+        'uses' => 'PostController@listMember',
+    ]);
+
+    $router->get('member/{id}', [
+        'as' => 'api.post.member.detail',
+        'uses' => 'PostController@memberDetail',
+    ]);
+
+    $router->post('member', [
+        'as' => 'api.post.member.create',
+        'uses' => 'PostController@createMember',
+    ]);
+
+    $router->post('comment', [
+        'as' => 'api.post.member.create',
+        'uses' => 'PostController@postComment',
+    ]);
+
+    $router->get('like/{id}', [
+        'as' => 'api.post.like.send',
+        'uses' => 'PostController@likeOrrUnlike',
     ]);
 });

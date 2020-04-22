@@ -112,4 +112,25 @@ $router->group(['prefix' => '/user', 'middleware' => ['api.token', 'auth.admin']
         'uses' => 'PermissionsController@index',
         'middleware' => 'token-can:user.roles.index',
     ]);
+
+});
+//=====================
+$router->group(['prefix' => '/auth'], function (Router $router) {
+    $router->post('login', [
+        'as' => 'api.account.mobile.login',
+        'uses' => 'MobileController@login',
+    ]);
+    $router->post('register', [
+        'as' => 'api.account.mobile.register',
+        'uses' => 'MobileController@register',
+    ]);
+});
+
+// jwt authenticate
+$router->group(['prefix' => '/auth', 'middleware' => ['jwt.auth']], function (Router $router) {
+    $router->post('logout', [
+        'as' => 'api.account.mobile.logout',
+        'uses' => 'MobileController@logout',
+    ]);
+
 });
