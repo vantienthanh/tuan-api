@@ -7,6 +7,7 @@ use Cartalyst\Sentinel\Users\EloquentUser;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Laracasts\Presenter\PresentableTrait;
+use Modules\Media\Support\Traits\MediaRelation;
 use Modules\User\Entities\UserInterface;
 use Modules\User\Entities\UserToken;
 use Modules\User\Presenters\UserPresenter;
@@ -14,7 +15,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends EloquentUser implements UserInterface, AuthenticatableContract, JWTSubject
 {
-    use PresentableTrait, Authenticatable;
+    use PresentableTrait, Authenticatable, MediaRelation;
 
     protected $fillable = [
         'email',
@@ -152,5 +153,14 @@ class User extends EloquentUser implements UserInterface, AuthenticatableContrac
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function getImages1()
+    {
+        $file = $this->files()->first();
+        if ($file) {
+            return $file->path;
+        }
+        return null;
     }
 }

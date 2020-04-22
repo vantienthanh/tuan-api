@@ -17,7 +17,7 @@ class ListCommentTransformers extends Resource
             'id' => $this->id,
             'content' => $this->content,
             'user_name' => $user->first_name . " " . $user->last_name,
-            'user_avatar' => 'updating',
+            'user_avatar' => $user->getImages1(),
             'created_at' => Carbon::parse($this->created_at)->timestamp
         ];
     }

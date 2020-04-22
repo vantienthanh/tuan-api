@@ -23,7 +23,7 @@ public function toArray($request)
         'like_count' => $this->like->count(),
         'comment_count' => $this->comment->count(),
         'user_name' => $user->first_name . " " . $user->last_name,
-        'user_avatar' => 'updating link',
+        'user_avatar' => $user->getImages1(),
         'created_at' => Carbon::parse($this->created_at)->timestamp,
         'comment' => ListCommentTransformers::collection($this->comment)
     ];
