@@ -8,6 +8,7 @@ use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Laracasts\Presenter\PresentableTrait;
 use Modules\Media\Support\Traits\MediaRelation;
+use Modules\User\Entities\Information;
 use Modules\User\Entities\UserInterface;
 use Modules\User\Entities\UserToken;
 use Modules\User\Presenters\UserPresenter;
@@ -162,5 +163,10 @@ class User extends EloquentUser implements UserInterface, AuthenticatableContrac
             return $file->path;
         }
         return null;
+    }
+
+    public function info()
+    {
+        return $this->hasOne(Information::class,'user_id','id');
     }
 }

@@ -6,7 +6,10 @@ namespace Modules\User\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Modules\User\Entities\Information;
 use Modules\User\Entities\Sentinel\User;
+use Modules\User\Transformers\UserInformationTransformers;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
@@ -79,8 +82,33 @@ class MobileController extends Controller
         }
     }
 
-    public function user(Request $request)
+    public function info()
     {
-        dd($request->header('Authorization'));
+        $user = Auth::user();
+        return new UserInformationTransformers($user);
+    }
+
+    public function updateInfo(Request $request)
+    {
+        $user = Auth::user();
+        $info = $user->info;
+        dd($request->all());
+        if (isset($info)) {
+            // update
+            $info->fill($request->all());
+            $info->user_id = $user->id;
+            $info->save();
+        } else {
+            // create
+            $info = new Information();
+            $info->fill($request->all());
+            $info->user_id = $user->id;
+            $info->save();
+        }
+        return response([
+            'errors' => 'false',
+            'message' => 'Update user information successfully'
+        ]);
+
     }
 }

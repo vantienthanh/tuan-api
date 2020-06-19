@@ -137,7 +137,7 @@ class PostController extends Controller
         $user = Auth::user();
         $post_id = $request->id;
         $post = $this->post->getByAttributes(['id' => $post_id])->first();
-        $like = Like::where('user_id',$user->id)->where('post_id',$post_id)->first();
+        $like = Like::where('user_id',$user->id)->where('post_id',$post_id)->where('type',Like::TYPE_POST)->first();
         if (isset($like)) {
             $like->delete();
             return response()->json([
@@ -149,7 +149,9 @@ class PostController extends Controller
         } else {
             $data = [
                 'user_id' => $user->id,
-                'post_id' => $post->id
+                'post_id' => $post->id,
+                'action' => Like::ACTION_LIKE,
+                'type' => Like::TYPE_POST
             ];
             $like = new Like($data);
             $like->save();

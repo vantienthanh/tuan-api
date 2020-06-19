@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e6d82cc-00a9-409c-b0b2-dcd30d7258c8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Modules/User/Entities/Information.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/User/Transformers/UserInformationTransformers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Post/Transformers/EmployerDetailTransformers.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Post/Transformers/EmployerDetailTransformers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Post/Transformers/ListCommentTransformers.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Post/Transformers/ListCommentTransformers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Post/Transformers/ListEmployerTransformers.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Post/Transformers/ListEmployerTransformers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Post/Transformers/ListMemberTransformers.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Post/Transformers/ListMemberTransformers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Post/Transformers/MemberDetailTransformers.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Post/Transformers/MemberDetailTransformers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/User/Entities/Sentinel/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/User/Entities/Sentinel/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/User/Http/Controllers/Api/MobileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/User/Http/Controllers/Api/MobileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/User/Http/apiRoutes.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/User/Http/apiRoutes.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,14 +149,13 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../quang-cao" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -190,6 +189,14 @@
       <workItem from="1587396696639" duration="10320000" />
       <workItem from="1587475506028" duration="5593000" />
       <workItem from="1587534507757" duration="6311000" />
+      <workItem from="1589298196705" duration="9157000" />
+      <workItem from="1589653360315" duration="4941000" />
+      <workItem from="1589987438980" duration="9904000" />
+      <workItem from="1590253991188" duration="2645000" />
+      <workItem from="1592582646803" duration="678000" />
+      <workItem from="1592583776191" duration="159000" />
+      <workItem from="1592584749281" duration="1000" />
+      <workItem from="1592585935728" duration="742000" />
     </task>
     <servers />
   </component>
@@ -210,22 +217,22 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="375" y="455" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1587539827396">
+    <state x="375" y="455" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589989930531">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="375" y="455" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1587539827396" />
-    <state x="428" y="455" key="FileChooserDialogImpl" timestamp="1587539559825">
+    <state x="375" y="455" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1589989930531" />
+    <state x="428" y="455" key="FileChooserDialogImpl" timestamp="1590254291226">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="428" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1587539559825" />
-    <state x="422" y="514" key="NewPhpClassDialog" timestamp="1587537360327">
+    <state x="428" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1590254291226" />
+    <state x="422" y="514" key="NewPhpClassDialog" timestamp="1589990025017">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="422" y="514" key="NewPhpClassDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1587537360327" />
-    <state x="480" y="623" key="NewPhpFileDialog" timestamp="1587317223548">
+    <state x="422" y="514" key="NewPhpClassDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1589990025017" />
+    <state x="480" y="623" key="NewPhpFileDialog" timestamp="1589301264555">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="480" y="623" key="NewPhpFileDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1587317223548" />
+    <state x="480" y="623" key="NewPhpFileDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1589301264555" />
     <state x="345" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1587534517159">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
