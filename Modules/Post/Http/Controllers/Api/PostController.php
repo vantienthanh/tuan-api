@@ -163,4 +163,18 @@ class PostController extends Controller
             );
         }
     }
+
+    public function searchEmployer(Request $request)
+    {
+        $data = $this->post->searchEmployer($request->string);
+
+        return ListEmployerTransformers::collection($data);
+    }
+
+    public function searchMember(Request $request)
+    {
+        $data = $this->post->searchMember($request->string);
+
+        return ListMemberTransformers::collection($data);
+    }
 }
