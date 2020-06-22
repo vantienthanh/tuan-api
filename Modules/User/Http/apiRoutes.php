@@ -133,4 +133,13 @@ $router->group(['prefix' => '/auth', 'middleware' => ['jwt.auth']], function (Ro
         'uses' => 'MobileController@logout',
     ]);
 
+    $router->get('user-detail', [
+        'as' => 'api.account.mobile.info',
+        'uses' => 'MobileController@info',
+    ]);
+
+    $router->post('user-detail', [
+        'as' => 'api.account.mobile.updateInfo',
+        'uses' => 'MobileController@updateInfo',
+    ]);
 });
