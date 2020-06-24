@@ -92,7 +92,6 @@ class MobileController extends Controller
     {
         $user = Auth::user();
         $info = $user->info;
-        dd($request->all());
         if (isset($info)) {
             // update
             $info->fill($request->all());
