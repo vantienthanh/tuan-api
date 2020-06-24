@@ -20,6 +20,8 @@ class UserInformationTransformers extends Resource
             'marital' => $this->info ? $this->info->marital : '',
             'hobby' => $this->info ? $this->info->hobby : '',
             'avatar' => '',
+            'sub_name' => $this->info ? $this->info->sub_name : '',
+            'sort_description' => $this->info ? $this->info->sort_description : '',
         ];
     }
 }

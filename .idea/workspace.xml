@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5e6d82cc-00a9-409c-b0b2-dcd30d7258c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Post/Transformers/ListEmployerTransformers.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Post/Transformers/ListEmployerTransformers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Post/Transformers/ListMemberTransformers.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Post/Transformers/ListMemberTransformers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Review/Transformers/ListCompanyTransformers.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Review/Transformers/ListCompanyTransformers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/User/Entities/Information.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/User/Entities/Information.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/User/Transformers/UserInformationTransformers.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/User/Transformers/UserInformationTransformers.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +198,7 @@
       <workItem from="1592839496722" duration="860000" />
       <workItem from="1592843905918" duration="293000" />
       <workItem from="1592844206239" duration="2757000" />
-      <workItem from="1592965875277" duration="2989000" />
+      <workItem from="1592965875277" duration="5570000" />
     </task>
     <servers />
   </component>
@@ -223,10 +222,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="331" y="436" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1592840422022" />
-    <state x="375" y="455" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592845975060">
+    <state x="375" y="455" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592969890109">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="375" y="455" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1592845975060" />
+    <state x="375" y="455" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1592969890109" />
     <state x="428" y="455" key="FileChooserDialogImpl" timestamp="1590254291226">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
