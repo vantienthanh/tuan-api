@@ -33,7 +33,7 @@ class CompanyDetailTransformers extends Resource
             $star+= $item->star;
         }
 
-        return $star/$this->review->count();
+        return $this->review->count() ? $star/$this->review->count() : 0;
     }
 
     public function getRatingCount($company_id)
