@@ -110,4 +110,10 @@ class MobileController extends Controller
         ]);
 
     }
+
+    public function viewInfo(Request $request)
+    {
+        $data = User::where('id',$request->id)->first();
+        return new UserInformationTransformers($data);
+    }
 }
