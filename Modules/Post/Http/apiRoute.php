@@ -19,7 +19,7 @@ $router->group(['prefix' => '/post', 'middleware' => ['jwt.auth']], function (Ro
         'uses' => 'PostController@createEmployer',
     ]);
 
-    $router->get('employer/search/{string}', [
+    $router->get('employer/search/params', [
         'as' => 'api.post.employer.search',
         'uses' => 'PostController@searchEmployer',
     ]);
@@ -39,7 +39,7 @@ $router->group(['prefix' => '/post', 'middleware' => ['jwt.auth']], function (Ro
         'uses' => 'PostController@createMember',
     ]);
 
-    $router->get('member/search/{string}', [
+    $router->get('member/search/params', [
         'as' => 'api.post.member.search',
         'uses' => 'PostController@searchMember',
     ]);

@@ -2,6 +2,7 @@
 
 namespace Modules\Post\Repositories;
 
+use Illuminate\Http\Request;
 use Modules\Core\Repositories\BaseRepository;
 
 interface PostRepository extends BaseRepository
@@ -10,7 +11,7 @@ interface PostRepository extends BaseRepository
 
     public function getListMember ();
 
-    public function searchEmployer($string);
+    public function searchEmployer(Request $request);
 
-    public function searchMember($string);
+    public function searchMember(Request $request);
 }

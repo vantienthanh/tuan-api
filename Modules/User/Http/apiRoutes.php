@@ -138,6 +138,11 @@ $router->group(['prefix' => '/auth', 'middleware' => ['jwt.auth']], function (Ro
         'uses' => 'MobileController@info',
     ]);
 
+    $router->get('user-info/{id}', [
+        'as' => 'api.user.mobile.info',
+        'uses' => 'MobileController@viewInfo',
+    ]);
+
     $router->post('user-detail', [
         'as' => 'api.account.mobile.updateInfo',
         'uses' => 'MobileController@updateInfo',

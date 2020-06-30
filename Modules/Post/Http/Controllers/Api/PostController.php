@@ -166,14 +166,14 @@ class PostController extends Controller
 
     public function searchEmployer(Request $request)
     {
-        $data = $this->post->searchEmployer($request->string);
+        $data = $this->post->searchEmployer($request);
 
         return ListEmployerTransformers::collection($data);
     }
 
     public function searchMember(Request $request)
     {
-        $data = $this->post->searchMember($request->string);
+        $data = $this->post->searchMember($request);
 
         return ListMemberTransformers::collection($data);
     }
