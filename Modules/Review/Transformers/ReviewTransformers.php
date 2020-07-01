@@ -20,6 +20,7 @@ class ReviewTransformers extends Resource
             'review_content' => $this->review_content,
             'star' => $this->star,
             'user_avatar' => $user->getImages1(),
+            'user_id' => $user->id,
             'like_count' => $this->countLike($this),
             'dislike_count' => $this->countDislike($this),
             'created_at' => Carbon::parse($this->created_at)->timestamp,
