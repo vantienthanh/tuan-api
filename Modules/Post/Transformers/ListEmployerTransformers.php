@@ -29,6 +29,7 @@ class ListEmployerTransformers extends Resource
             'is_liked' => $this->getLikeStatus($userAuth->id, $this->id),
             'comment_count' => $this->comment->count(),
             'user_name' => $user->first_name . " " . $user->last_name,
+            'user_id' => $user->id,
             'user_avatar' => $user->getImages1(),
             'created_at' => Carbon::parse($this->created_at)->timestamp
         ];
