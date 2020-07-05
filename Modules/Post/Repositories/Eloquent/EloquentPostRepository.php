@@ -37,6 +37,9 @@ class EloquentPostRepository extends EloquentBaseRepository implements PostRepos
                 if ($request->get('career') !== null) {
                     $q->where('career','like','%'.$request->get('career').'%');
                 }
+                if ($request->get('description') !== null) {
+                    $q->where('description','like','%'.$request->get('description').'%');
+                }
         })->orderBy('created_at','desc')
             ->paginate(10);
     }
@@ -57,6 +60,9 @@ class EloquentPostRepository extends EloquentBaseRepository implements PostRepos
                 }
                 if ($request->get('career') !== null) {
                     $q->where('career','like','%'.$request->get('career').'%');
+                }
+                if ($request->get('description') !== null) {
+                    $q->where('description','like','%'.$request->get('description').'%');
                 }
             })->orderBy('created_at','desc')
             ->paginate(10);
